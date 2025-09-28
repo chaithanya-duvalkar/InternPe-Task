@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ShopEase</div>
+    <a href="index.html" style="color:white;">🏠 Home</a>
+  </header>
+
+  <section class="products" id="cart-items"></section>
+  <h2 style="text-align:center;">Total: ₹<span id="total">0</span></h2>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("cart-items");
+    const totalDisplay = document.getElementById("total");
+
+    function renderCart(){
+      cartContainer.innerHTML = "";
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price;
+        cartContainer.innerHTML += `
+          <div class="product-card">
+            <img src="${item.img}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p>₹${item.price}</p>
+            <button onclick="removeItem(${index})">Remove</button>
+          </div>`;
+      });
+      totalDisplay.innerText = total;
+    }
+
+    function removeItem(index){
+      cart.splice(index,1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>

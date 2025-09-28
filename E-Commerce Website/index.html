@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">ShopEase</div>
+      <input type="text" id="search" placeholder="Search products...">
+      <div class="categories">
+        <button data-category="All" class="category-btn active">All</button>
+        <button data-category="Electronics" class="category-btn">Electronics</button>
+        <button data-category="Clothing" class="category-btn">Clothing</button>
+        <button data-category="Home" class="category-btn">Home</button>
+        <button data-category="Toys" class="category-btn">Toys</button>
+      </div>
+      <div class="nav-links">
+        <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+        <a href="#" id="wishlist-btn">❤️ Wishlist (<span id="wishlist-count">0</span>)</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Welcome to ShopEase</h1>
+    <p>Find your favorite products at amazing prices!</p>
+  </section>
+
+  <!-- Filter Sort -->
+  <section class="filter-sort">
+    <label>Sort by Price:</label>
+    <select id="sort">
+      <option value="default">Default</option>
+      <option value="low">Low to High</option>
+      <option value="high">High to Low</option>
+    </select>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="products" id="product-list">
+    <!-- Products added dynamically via JS -->
+  </section>
+
+  <footer>
+    <p>© 2025 ShopEase | All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
