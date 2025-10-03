@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📝 To-Do List</h1>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+  </header>
+
+  <main class="container">
+    <!-- Input Section -->
+    <div class="input-box">
+      <input type="text" id="taskInput" placeholder="Enter a new task...">
+      <select id="categorySelect">
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="date" id="dueDate">
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <select id="filterCategory" onchange="filterTasks()">
+        <option value="All">All Categories</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Other">Other</option>
+      </select>
+      <select id="filterStatus" onchange="filterTasks()">
+        <option value="All">All Status</option>
+        <option value="Pending">Pending</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <input type="text" id="searchTask" placeholder="Search task..." onkeyup="filterTasks()">
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList"></ul>
+
+    <div class="actions">
+      <button onclick="clearAll()">Clear All Tasks</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 To-Do App | Internship Submission</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

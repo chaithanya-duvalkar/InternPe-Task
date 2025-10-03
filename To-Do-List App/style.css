@@ -1,0 +1,175 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #667eea;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+header button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fff;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.container {
+  flex: 1;
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.input-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.input-box input, .input-box select, .input-box button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.input-box button {
+  background: #667eea;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.input-box button:hover {
+  background: #5563c1;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.filters input, .filters select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+}
+
+li {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid #667eea;
+}
+
+li.completed {
+  text-decoration: line-through;
+  background: #d1ffd1;
+  border-left: 5px solid #28a745;
+}
+
+li.overdue {
+  border-left: 5px solid #dc3545;
+}
+
+li span {
+  flex: 1;
+  margin-right: 10px;
+}
+
+li small {
+  color: gray;
+  font-size: 0.8rem;
+}
+
+li button {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.complete-btn { background: #28a745; color: #fff; }
+.delete-btn { background: #dc3545; color: #fff; }
+
+/* Actions */
+.actions {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.actions button {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #181818;
+  color: #f1f1f1;
+}
+
+body.dark header {
+  background: #222;
+}
+
+body.dark li {
+  background: #2a2a2a;
+  color: #f1f1f1;
+}
+
+body.dark .input-box input,
+body.dark .filters input,
+body.dark .filters select {
+  background: #333;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
